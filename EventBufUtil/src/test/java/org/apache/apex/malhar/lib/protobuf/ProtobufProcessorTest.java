@@ -39,7 +39,7 @@ public class ProtobufProcessorTest
       super.starting(description);
       operator = new ProtobufProcessor<AddressBook>();
       operator.setClazz(AddressBook.class);
-      operator.setParser(com.example.tutorial.AddressBookProtos.AddressBook.PARSER);
+      operator.setParser(com.example.tutorial.AddressBookProtos.AddressBook.parser());
 
       validDataSink = new CollectorTestSink<Object>();
       invalidDataSink = new CollectorTestSink<String>();

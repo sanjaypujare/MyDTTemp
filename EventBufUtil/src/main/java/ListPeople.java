@@ -12,7 +12,8 @@ class ListPeople {
     for (Person person: addressBook.getPersonList()) {
       System.out.println("Person ID: " + person.getId());
       System.out.println("  Name: " + person.getName());
-      if (person.hasEmail()) {
+      String email = person.getEmail();
+      if (email != null) {
         System.out.println("  E-mail address: " + person.getEmail());
       }
 

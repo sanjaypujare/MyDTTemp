@@ -8,13 +8,13 @@ import javax.validation.constraints.NotNull;
 import com.datatorrent.api.Context.OperatorContext;
 import com.datatorrent.lib.parser.Parser;
 import com.datatorrent.netlet.util.Slice;
-import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.AbstractMessage;
 import com.google.protobuf.InvalidProtocolBufferException;
 
 /**
  *
  */
-public class ProtobufProcessor<T extends GeneratedMessage> extends Parser<Slice, String> {
+public class ProtobufProcessor<T extends AbstractMessage> extends Parser<Slice, String> {
 
   @NotNull
   private com.google.protobuf.Parser<T> parser;
