@@ -13,7 +13,25 @@
     <!-- was 3.3.0-incubating which works -->
     <apex.version>3.4.0</apex.version>
     <apex.apppackage.classpath>lib/*.jar</apex.apppackage.classpath>
+    <grpc.version>0.15.0</grpc.version>
   </properties>
+  <build>
+    <plugins>
+      <plugin>
+         <artifactId>maven-compiler-plugin</artifactId>
+         <version>3.3</version>
+         <configuration>
+           <encoding>UTF-8</encoding>
+           <source>1.7</source>
+           <target>1.7</target>
+           <debug>true</debug>
+           <optimize>false</optimize>
+           <showDeprecation>true</showDeprecation>
+           <showWarnings>true</showWarnings>
+         </configuration>
+       </plugin>
+    </plugins>
+  </build>
   
     <dependencies>
     <!-- add your dependencies here -->
@@ -51,6 +69,26 @@
 		<artifactId>protobuf-java-util</artifactId>
 		<version>3.0.0</version>
 	</dependency>
+	<dependency>
+		<groupId>io.grpc</groupId>
+		<artifactId>grpc-netty</artifactId>
+		<version>${grpc.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>io.grpc</groupId>
+		<artifactId>grpc-protobuf</artifactId>
+		<version>${grpc.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>io.grpc</groupId>
+		<artifactId>grpc-stub</artifactId>
+		<version>${grpc.version}</version>
+	</dependency>
+	<dependency>
+		<groupId>io.netty</groupId>
+		<artifactId>netty-tcnative-boringssl-static</artifactId>
+		<version>1.1.33.Fork17</version>
+	</dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -62,6 +100,11 @@
       <artifactId>apex-engine</artifactId>
       <version>${apex.version}</version>
       <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.example</groupId>
+      <artifactId>grpc</artifactId>
+      <version>0.0.1-SNAPSHOT</version>
     </dependency>
   </dependencies>
   
